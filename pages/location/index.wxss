@@ -1,0 +1,73 @@
+/* pages/location/index.wxss */
+.location{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+.location-head{
+    width: 100%;
+    height: 100rpx;
+    padding: 20rpx 0;
+    position: relative;
+}
+.head-del{
+    position: absolute;
+    right:100rpx;
+    top: 20rpx;
+    width: 60rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.head-info{
+    width: 80%;
+    margin: auto;
+    height: 60rpx;
+    border-radius: 50rpx;
+    line-height: 60rpx;
+     padding: 0 90rpx 0 70rpx;
+}
+.location-head image{
+    width: 35rpx;
+    height: 35rpx;
+    position: absolute;
+    top: 35rpx;
+    left: 95rpx;
+}
+.cur-text{
+    padding:25rpx 0 10rpx 20rpx; 
+}
+.cur-address{
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 20rpx;
+}
+
+.cur-address .address-name{
+    width: 75%;   
+}
+.cur-address .adddress-redect image{      
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle;
+    margin:-2rpx 5rpx 0 0;
+}
+.delivery-info{
+    padding: 20rpx;
+    height: 110rpx;
+    margin-bottom: 2rpx;
+}
+.delivery-info .info-user{
+    height: 35rpx;
+}
+.delivery-info .info-address{
+    height: 35rpx;
+}
+.location-not .not-logo{
+    width: 151rpx;
+    height: 151rpx;
+    margin:100rpx auto 30rpx;
+}
+.location-not .not-logo image{
+    width: 151rpx;
+    height: 151rpx;
+}

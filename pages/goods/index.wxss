@@ -1,0 +1,57 @@
+@import '../template/goods.wxss';
+
+.search-body {
+  width: 100%;
+  height: 100%;
+}
+
+.gd-search {
+  width: 100%;
+  background: #d5051d;
+  padding: 20rpx 0;
+}
+
+.search-info {
+  width: 80%;
+  padding: 0 10rpx;
+  border-radius: 40rpx;
+  background: #fff;
+  color: #282828;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  position: relative;
+}
+
+.sc-icon {
+  position: absolute;
+  width: 34rpx;
+  height: 34rpx;
+  left: 10rpx;
+  top: 23rpx;
+}
+
+.sc-text {
+  text-align: left;
+  width: 98%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 0 0 50rpx;
+}
+
+.goods-info {
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.bt-num {
+  width: 150rpx;
+}
+
+.search-item {
+  width: 100%;
+  padding: 0 10rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}

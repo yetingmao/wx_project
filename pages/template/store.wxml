@@ -1,0 +1,45 @@
+<template name="store">
+  <view bindtap="{{item.tag?'toDetail':''}}" class="list-item bg-w" data-id="{{item.sid}}" data-radius="{{item.dst}}">
+    <image src="../../images/{{item.tag?'store':'store1'}}.png" class="item-image fl-l"></image>
+    <view class="item-info fl-l">
+      <view class="item-top">
+        <view class="top-left fl-l">
+          <view class="top-name {{item.tag?'':'ft-e'}}">{{item.name}}</view>
+          <view class="top-grade">
+            <image src="../../images/{{item.tag?'star':'star1'}}.png" class="star-icon"></image>
+            <image src="../../images/{{item.tag?'star':'star1'}}.png" class="star-icon"></image>
+            <image src="../../images/{{item.tag?'star':'star1'}}.png" class="star-icon"></image>
+            <image src="../../images/{{item.tag?'star':'star1'}}.png" class="star-icon"></image>
+            <image src="../../images/{{item.tag?'star':'star1'}}.png" class="star-icon"></image>
+            <text class="grade-num {{item.tag?'':'ft-e'}}">5.0</text>
+          </view>
+          <view class="top-price">
+            <text class="price-item {{item.tag?'':'bc-e'}}">¥{{item.bl}}元起送</text>
+            <text class="price-item {{item.tag?'':'bc-e'}}">¥{{item.fre}}配送费</text>
+          </view>
+        </view>
+        <view class="top-right fl-r">
+          <view class="tip-top">
+            <view class="right-tip ft-c fl-r {{item.tag?'':'ft-e right-gray'}}">商家配送</view>
+            <view class="right-tip ft-c fl-r {{item.tag?'':'ft-e right-gray'}}">准时达</view>
+          </view>
+          <view class="top-kili fl-r">
+            <text class="ft-bg ft-e fl-r">{{item.dst}}{{item.company}}</text>
+            <image src="../../images/kilo.png" class="kili-icon fl-r"></image>
+          </view>
+        </view>
+      </view>
+      <view class="item-bottom {{item.tag?'':'ft-e'}}"> {{item.prompt}} </view>
+    </view>
+  </view>
+  <view wx:for="{{item.goods}}" wx:for-index="i" wx:for-item="item">
+    <block wx:if="{{item.amount>0}}">
+      <view wx:if="{{i <= 2}}">
+        <view class="list-goods bg-w">
+          <view class="goods-name ft-e fl-l">{{item.name}}</view>
+          <view class="ft-b fl-r">￥{{item.money}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>

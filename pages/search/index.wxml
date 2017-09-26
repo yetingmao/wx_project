@@ -1,0 +1,43 @@
+<view class="location">
+  <view class="location-head bg-r">
+    <input bindinput="searchGoods" value="{{words}}" class="head-info bg-w" placeholder="请输入商品名称" />
+    <image src="../../images/search.png"></image>
+    <text bindtap="delSearch" class="head-del ft-b {{state >= 2?' ':'dp-n'}}">取消</text>
+    <text bindtap="{{state >= 2? 'searchResult':''}}" class="head-search ta-c ft-b">搜索</text>
+  </view>
+  <view class="lication-cur {{state == 1?' ':'dp-n'}}">
+    <view class="cur-text ft-e">搜索历史</view>
+    <import src="../template/history.wxml" />
+    <block wx:for="{{his}}" wx:for-index="i" wx:for-item="item">
+      <view wx:if="{{i <= 9}}">
+        <template is="history" data="{{item}}"></template>
+      </view>
+    </block>
+    <view class="ta-c">{{his.length==0?'暂无历史记录':''}}</view>
+  </view>
+  <view class="lication-cur {{state == 2?' ':'dp-n'}}">
+    <import src="../template/search.wxml" />
+    <block wx:for="{{search}}" wx:for-index="i" wx:for-item="item">
+      <view wx:if="{{i <= 9}}">
+        <template is="search" data="{{item}}"></template>
+      </view>
+    </block>
+  </view>
+  <!--此处做分页-->
+  <view class="lication-cur {{state == 3?' ':'dp-n'}}">
+    <import src="../template/store.wxml" />
+    <block wx:for="{{info}}" wx:for-index="i" wx:for-item="item">
+      <view class="lication-cur">
+        <template is="store" data="{{item}}"></template>
+      </view>
+    </block>
+  </view>
+  <view class="{{state==4? '':'dp-n'}}">
+    <view class="location-not ta-c">
+      <view class="not-logo">
+        <image src="../../images/location.png"></image>
+      </view>
+      <view class="not-text ft-e">未搜到该相关结果!</view>
+    </view>
+  </view>
+</view>

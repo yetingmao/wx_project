@@ -1,0 +1,89 @@
+.lt-good {
+  width: 100%;
+  height: 160rpx;
+  padding: 20rpx 20rpx 20rpx 40rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.gd-info {
+  width: 62%;
+}
+
+.gd-title {
+  font-size: 30rpx;
+}
+
+.info-text {
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.pd-info {
+  background: #fea600;
+  color: #fff;
+  max-width: 50%;
+  padding: 0 12rpx;
+  border-radius: 4rpx;
+}
+
+.gd-button {
+  width: 38%;
+  padding-top: 60rpx;
+}
+
+.cart-icon {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.bt-num {
+  width: 46%;
+  text-align: center;
+  height: 54rpx;
+  line-height: 54rpx;
+  padding: 0 5rpx;
+  overflow: hidden;
+}
+
+.cart-no {
+  padding: 30rpx 10rpx;
+}
+
+/*底部购物车*/
+
+.body-cart  .lt-good {
+  height: 90rpx;
+  padding: 17rpx;
+}
+.body-cart  .gd-info {
+  width: 70%;
+}
+.body-cart .info-text {
+  float: left;
+  height: 54rpx;
+  line-height: 54rpx;
+}
+
+.body-cart .gd-button {
+  padding: 0;
+}
+
+.body-cart .gd-title {
+  width: 50%;
+}
+.body-cart .pd-info {
+  max-width: 160rpx;
+}
+.body-cart .page-cart .bt-num {
+  width: 60rpx;
+}
+.body-cart .gd-button{
+  width: 28%;
+}
+
+.body-cart .bt-num{
+  width: 44%;
+}
+.body-cart .gd-price{
+  margin-left:10rpx;
+}

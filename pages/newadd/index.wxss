@@ -1,0 +1,78 @@
+.new-name {
+  width: 100%;
+  line-height: 100rpx;
+  padding-left: 20rpx;
+}
+
+input {
+  height: 100rpx;
+  width: 76%;
+  font-size: 26rpx;
+}
+
+.input-long {
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.new-gender {
+  line-height: 100rpx;
+}
+
+.new-gender view text {
+  display: inline-block;
+  width: 80rpx;
+  line-height: 100rpx;
+}
+
+.gender-boy, .gender-girl {
+  width: 375rpx;
+}
+
+.new-gender image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 0 0 110rpx;
+  position: relative;
+  top: 10rpx;
+}
+
+.new-phone {
+  width: 100%;
+  line-height: 100rpx;
+  padding-left: 20rpx;
+}
+
+.phone-title {
+  width: 24%;
+}
+
+.address-value {
+  width: 70%;
+  height: 100rpx;
+}
+
+.address-value image {
+  width: 16rpx;
+  height: 30rpx;
+  position: relative;
+  top: 10rpx;
+}
+
+.new-detail {
+  line-height: 100rpx;
+}
+
+.new-detail input {
+  border-top: 1px solid #f2f2f2;
+}
+
+.new-ensure {
+  color: #fff;
+  line-height: 100rpx;
+  width: 700rpx;
+  margin: 60rpx auto;
+  border-radius: 4px;
+}

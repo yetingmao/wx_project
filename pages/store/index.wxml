@@ -1,0 +1,82 @@
+
+<!--pages/detail/index.wxml-->
+<import src="../template/store.wxml" />
+<block wx:for="{{storeI}}">
+  <view class="lication-cur">
+    <template is="store" data="{{item}}"></template>
+  </view>
+</block>
+<view class="body fl-l">
+  <view class="body-catalog fl-l">
+    <scroll-view class="bd-catalog fl-l {{catalog.length==0?'dp-n':''}}" scroll-y='true' style="height:{{catalogH}}">
+      <block wx:for-items="{{catalog}}" wx:key="catalog">
+        <view class="catalog-detail {{item.active}}" data-id="{{item.cid}}" bindtap="changeCata">{{item.name}}</view>
+      </block>
+    </scroll-view>
+    <view class="cart-no {{catalog.length==0?'':'dp-n'}}">暂无数据</view>
+  </view>
+  <view class="bd-goods fl-l">
+    <view class="gd-search">
+      <view class="search-info" bindtap="search">
+        <image class="fl-l sc-icon" src="../../images/search.png"></image>
+        <text class="fl-l sc-text">输入商品名称</text>
+      </view>
+      <view class="goods-catalog">
+        <view class="catalog-name ft-e fl-l">{{catalogN}}</view>
+        <view class="catalog-sum ft-e fl-r">{{cataS>0?'共':''}}
+          <text class="ft-e">{{cataS>0?cataS:''}}</text>
+          <text>{{cataS>0?'种商品':''}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="goods-info">
+      <scroll-view class="gd-lists {{goodsList.length==0?'dp-n':''}}" scroll-y='true' style="height:{{goodsH}}">
+        <import src="../template/good.wxml" />
+        <block wx:for-items="{{goodsList}}" wx:key="goodsList">
+          <template is="Goods" data="{{item}}"></template>
+        </block>
+      </scroll-view>
+      <view class="cart-no {{goodsList.length==0?'':'dp-n'}}">暂无数据</view>
+    </view>
+  </view>
+</view>
+<scroll-view class="scroll-info fl-l {{cartState.flag==0||sumT<=0?'dp-n':''}}" scroll-y="true">
+  <view class="body-cover" bindtap="cartDetail"></view>
+  <view class="body-cart" style="max-height:{{maxHeight}}">
+    <view class="cart-header">
+      <view class="fl-l header-hr"></view>
+      <view class="fl-l ft-bg">购物车</view>
+      <view class='fl-r header-clear' bindtap="clearCart">
+        <view class="fl-l"></view>
+        <view class="fl-l ft-bg ft-e">清空</view>
+      </view>
+    </view>
+    <view class="gd-lists {{cartList.length==0?'dp-n':''}}">
+      <import src="../template/good.wxml" />
+      <block wx:for-items="{{cartList}}" wx:key="cartList">
+        <template is="Goods" data="{{item}}"></template>
+      </block>
+    </view>
+    <view class="cart-no {{cartList.length==0?'':'dp-n'}}">暂无数据，请从列表中加入商品</view>
+  </view>
+</scroll-view>
+<view class="list-foot">
+  <view class="ft-cover"></view>
+  <view class="ft-body {{sumT<=0||total<storeD.bl?'ft-gray':''}}">
+    <view class="ft-item ft-first" bindtap="cartDetail">
+      <view class="ft-image fl-l">
+        <image class="ft-img" src="../../images/{{sumT<=0||total<storeD.bl?'cart.png':'cart2.png'}}"></image>
+        <view class="ft-sumT fl-l"> {{sumT>0?sumT:''}}</view>
+      </view>
+      <view class="ft-sum fl-l">
+        <view class="ft-b sum-text">¥{{total}}</view>
+        <view class="ft-e sum-text">配送费{{storeD.fre}}元</view>
+      </view>
+    </view>
+    <view class="ft-item ft-second " bindtap="goCart">
+      <view class="ft-cart {{sumT<=0||total<storeD.bl?'cart-gray':''}}">
+        {{total
+        <storeD.bl?(total? '还差': '')+ '¥'+(storeD.bl-total)+ '起送': '去结算'}} </view>
+      </view>
+    </view>
+  </view>

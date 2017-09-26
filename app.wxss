@@ -1,0 +1,129 @@
+/**app.wxss**/
+
+page {
+  height: 100%;
+  overflow-y: auto;
+  font-size: 24rpx;
+  background: #f2f2f2;
+}
+
+view {
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #282828;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+.fl-l {
+  float: left;
+}
+
+.fl-r {
+  float: right;
+}
+
+.fl-c{
+  clear:both;
+}
+
+.dp-n {
+  display: none;
+}
+
+.dp-b {
+  display: block;
+}
+
+.ta-c {
+  text-align: center;
+}
+
+.ta-r {
+  text-align: right;
+}
+
+.ta-l {
+  text-align: left;
+}
+
+.ft-a {
+  color: #d5051d;
+}
+
+.ft-b {
+  color: #f00;
+}
+
+.ft-c {
+  color: #0096ff;
+}
+
+.ft-d {
+  color: #282828;
+}
+
+.ft-e {
+  color: #b2b2b2;
+}
+.ft-r {
+  color: #ff0000;
+}
+
+.ft-g {
+  color: #ffa600;
+}
+.ft-w{
+  color: white;
+}
+.bg {
+  background: #f2f2f2;
+}
+
+.bg-w {
+  background: #fff;
+}
+
+.bg-g{
+  background:#ffa600;
+}
+
+.bg-r {
+  background: #d5051d;
+}
+
+.ft-bg {
+  font-size: 30rpx;
+}
+
+.ft-ss {
+  font-size: 22rpx;
+}
+
+.ft-sss {
+  font-size: 18rpx;
+}
+
+.ft-weight {
+  font-weight: bold;
+}
+.ov-hid{
+  overflow: hidden;
+}
+.bo-bo{
+  border-bottom:1px solid #f2f2f2;
+}
+/*模态框遮罩层*/
+.order-fixed {
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  z-index: 10;
+  background:rgba(0,0,0,0.2);
+  bottom: 0;
+}

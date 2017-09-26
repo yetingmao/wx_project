@@ -1,0 +1,10 @@
+<template name="address">
+  <view class="delivery-info bg-w" bindtap="reAddress" data-address="{{item.address}}" data-location="{{item.location}}">
+    <view class="info-user">
+      {{item.name}}
+      <text>{{item.gender==1?'男':'女'}}</text>
+      {{item.mobile}}
+    </view>
+    <view class="info-address">{{item.address}}</view>
+  </view>
+</template>

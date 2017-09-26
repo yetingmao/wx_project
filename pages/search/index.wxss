@@ -1,0 +1,75 @@
+/* pages/location/index.wxss */
+.location{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+.location-head{
+    width: 100%;
+    height: 100rpx;
+    padding: 20rpx 0;
+    position: relative;
+}
+.head-del{
+    position: absolute;
+    right:150rpx;
+    top: 20rpx;
+    width: 60rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.head-search{
+    position: absolute;
+    right:30rpx;
+    top: 20rpx;
+    width: 80rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #fff;
+    border-radius: 10rpx;
+}
+.lication-cur{
+    margin-bottom: 20rpx;
+}
+.head-info{
+    width: 80%;
+    margin: auto;
+    margin-left: 30rpx;
+    height: 60rpx;
+    border-radius: 50rpx;
+    line-height: 60rpx;
+    padding: 0 90rpx 0 70rpx;
+}
+.location-head image{
+    width: 35rpx;
+    height: 35rpx;
+    position: absolute;
+    top: 35rpx;
+    left: 50rpx;
+}
+.cur-text{
+    padding:30rpx 0 10rpx 20rpx; 
+}
+.cur-address{
+    height: 80rpx;
+    line-height: 80rpx;
+    padding: 0 20rpx;
+    margin-bottom: 2rpx;
+}
+.cur-address .address-name{
+    width: 80%;
+}
+/*模板的css*/
+@import '../template/store.wxss';
+.list-item{
+    margin-bottom: 0;
+}
+.location-not .not-logo{
+    width: 151rpx;
+    height: 151rpx;
+    margin:100rpx auto 30rpx;
+}
+.location-not .not-logo image{
+    width: 151rpx;
+    height: 151rpx;
+}

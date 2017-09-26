@@ -1,0 +1,5 @@
+<template name="search">
+  <view class="cur-address bg-w" bindtap="searchResult" data-keyword="{{item}}">
+    <view class="address-name">{{item}}</view>
+  </view>
+</template>

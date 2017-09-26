@@ -1,0 +1,111 @@
+
+<!--pages/oDetail/index.wxml-->
+<view class="details">
+  <view class="details-status bg-w">
+    <view class="status-head">
+      <view class="head-logo fl-l">
+        <image src="../../images/status.png"></image>
+      </view>
+      <view class="head-info fl-l">
+        <view class="ft-bg ft-c">{{obj.stateInfo}}</view>
+        <view class="ft-e">{{obj.createdAt}}</view>
+      </view>
+    </view>
+    <view class="status-middle bg"></view>
+    <view class="status-bottom">
+      <view class="bottom-sign">
+        <view class="sign-clc {{active1 ? 'sign-active' : ''}} fl-l"></view>
+        <view class="sign-line {{active2 ? 'sign-active' : ''}} fl-l"></view>
+        <view class="sign-clc fl-l {{active2 ? 'sign-active' : ''}}"></view>
+        <view wx:if="!{{obj.state}}== -98">
+          <view class="sign-line fl-l {{active3 ? 'sign-active' : ''}}"></view>
+          <view class="sign-clc fl-l {{active3 ? 'sign-active' : ''}}"></view>
+        </view>
+      </view>
+      <view class="bottom-text">
+        <view class="text-left fl-l ft-e {{active1 ? 'ft-g' : ''}}">{{stateTxt1}}</view>
+        <view class="text-mid fl-l ft-e {{active2 ? 'ft-g' : ''}}">{{stateTxt2}}</view>
+        <view wx:if="!{{obj.state}}== -98">
+          <view class="text-right fl-l ft-e {{active3 ? 'ft-g' : ''}}">{{stateTxt3}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="details-user bg-w">
+    <view class="user-logo fl-l">
+      <image src="../../images/address.png"></image>
+    </view>
+    <view class="user-info fl-l  ">
+      <view class="info-head info-group">
+        <view class="fl-l ft-d">{{obj.customerName || '-' }}</view>
+        <view class="head-tel fl-r ft-e">{{obj.customerPhone || '-'}}</view>
+      </view>
+      <view class="user-address ft-e info-group">{{obj.arrivedAddress || '-'}}</view>
+    </view>
+  </view>
+  <view class="details-goods">
+    <view class="goods-title bg-w">
+      <view class="ft-bg fl-l">{{obj.storeName}}</view>
+      <view class="title-logo fl-r" bindtap="callBusiness" data-phone="{{obj.storePhone}}">
+        <image src="../../images/tel.png"></image>
+      </view>
+    </view>
+    <block wx:for="{{obj.details}}">
+      <view class="goods-info bg-w">
+        <view class="info-name fl-l ft-e">{{item.name}}</view>
+        <view class="info-num fl-l ft-e">
+          <text class="num-x">X</text>
+          {{item.amount}}
+        </view>
+        <view class="info-prace fl-r ta-r ft-e">￥{{item.sum}}</view>
+      </view>
+    </block>
+    <view class="goods-add bg-w ">
+      <view class="add-one">
+        <view class="fl-l ">打包费</view>
+        <view class="fl-r ft-e">￥{{obj.pkSum}}</view>
+      </view>
+      <view class="add-one">
+        <view class="fl-l ">配送费</view>
+        <view class="fl-r ft-e">￥{{obj.dvSum}}</view>
+      </view>
+    </view>
+    <view class="goods-value bg-w ft-bg ta-r">
+      <view class="vlaue-prace">实付：
+        <text class="ft-b">￥{{obj.sum}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="details-order">
+    <view class="order-title bg-w ft-bg">订单信息</view>
+    <view class="order-num bg-w ft-e ft-bg">订单号：
+      <text>{{obj.orderId}}</text>
+    </view>
+    <view class="order-num bg-w ft-e order-method ft-bg">支付方式：
+      <text>微信支付</text>
+    </view>
+    <view class="order-num bg-w ft-e ft-bg">下单时间：
+      <text>{{obj.createdAt}}</text>
+    </view>
+  </view>
+  <view class="details-btn bg-w {{obj.state == 5? '':'dp-n'}}">
+    <view class="btn-submit fl-r ft-b ft-bg" data-id="{{obj.id}}" bindtap="payoff">去支付{{prompt}}</view>
+    <view class="btn-cancel fl-r ft-bg" data-id="{{obj.id}}" data-state="{{obj.state}}" bindtap="cancel">取消订单</view>
+  </view>
+  <view class="details-btn bg-w {{obj.state == 10? '':'dp-n'}}">
+    <view class="btn-cancel fl-r ft-bg" data-id="{{obj.id}}" data-state="{{obj.state}}" bindtap="cancel">取消订单</view>
+  </view>
+  <view class="details-btn bg-w {{obj.state == 20? '':'dp-n'}}">
+    <view class="btn-submit fl-r ft-b ft-bg" data-phone="{{obj.storePhone}}" data-id="{{obj.id}}" data-state="{{obj.state}}" bindtap="cancel">取消订单</view>
+    <view class="btn-cancel fl-r ft-bg" data-id="{{obj.id}}" bindtap="arriver">确认送达</view>
+  </view>
+</view>
+<view class="order-fixed {{show ? '' : 'dp-n'}}">
+  <view class="fixed-body ta-c">
+    <view class="fixed-top bg-w">
+      <view class="ft-b top-bod ft-bg">联系商家，快速取消订单</view>
+      <view class="ft-b ft-bg" data-phone="{{obj.storePhone}}" bindtap="callBusiness">联系电话:{{obj.storePhone}}</view>
+    </view>
+    <view class="fixed-bottom bg-w ft-e ft-bg" bindtap="cancelCall">取消</view>
+  </view>
+</view>

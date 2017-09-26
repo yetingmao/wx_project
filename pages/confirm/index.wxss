@@ -1,0 +1,192 @@
+/****todo 抽出模板****/
+
+view{
+    box-sizing:  content-box;
+}
+.details-goods {
+    margin-bottom: 20rpx;
+}
+
+.goods-title {
+    height: 90rpx;
+    padding: 0 30rpx;
+    overflow: hidden;
+    line-height: 90rpx;
+    margin-bottom: 2rpx;
+}
+
+.goods-title .title-logo {
+    margin-top: 17rpx;
+    width: 40rpx;
+    height: 56rpx;
+}
+
+.goods-title .title-logo image {
+    width: 40rpx;
+    height: 46rpx;
+}
+
+.goods-info {
+    height: 90rpx;
+    padding: 0 30rpx;
+    line-height: 90rpx;
+    overflow: hidden;
+    margin: 2rpx 0;
+}
+
+.goods-info .info-name {
+    width: 60%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.goods-info .info-num {
+    width: 20%;
+}
+
+.goods-info .info-num .num-x {
+    margin-right: 10rpx;
+}
+
+.goods-info .info-prace {
+    width: 20%;
+}
+
+.goods-add {
+    padding: 10rpx 30rpx;
+    margin-bottom: 2rpx;
+}
+
+.add-one {
+    overflow: hidden;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.goods-value {
+    padding:0 30rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+
+.details-order {
+    margin-bottom: 200rpx;
+}
+
+.order-title {
+    padding: 0 30rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-bottom: 1rpx;
+}
+
+.order-num {
+    padding:0 30rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin: 2rpx 0;
+}
+
+.order-num text {
+    margin-left: 20rpx;
+}
+.details-user {
+    margin: 20rpx 0;
+    height: 70rpx;
+    padding: 25rpx 30rpx;
+    overflow: hidden;
+}
+
+.user-logo {
+    width: 54rpx;
+    height: 54rpx;
+    margin-top: 5rpx;
+}
+
+.user-logo image {
+    width: 54rpx;
+    height: 54rpx;
+    display: block;
+}
+
+.user-info {
+    margin-left: 10rpx;
+    width: 580rpx;
+}
+
+.user-info .info-head {
+    line-height: 35rpx;
+    overflow: hidden;
+}
+
+.user-info .info-head .head-name {
+    margin-left: 15rpx;
+}
+
+.user-address {
+    width: 625rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-top: 3rpx;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.user-arr{
+    width:30rpx;
+    height:35rpx;
+    margin-top:17.5rpx;
+}
+
+.confirm-bottom{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:90rpx;
+}
+.confirm-btn{
+    width:210rpx;
+    height:90rpx;
+    background:#d5051d;
+    color:#fff;
+    text-align:center;
+    border-radius:0;
+}
+.bottom-text{
+    padding-left:30rpx;
+    height:90rpx;
+    line-height:90rpx;
+}
+.confirm-center{
+    height:140rpx;
+    overflow:hidden;
+    margin-bottom:20rpx;
+}
+.center-pay{
+    height:70rpx;
+    line-height:70rpx;
+    padding:0 20rpx;
+    border-bottom:1rpx solid #f2f2f2;
+}
+.center-remark{
+    padding:0 20rpx;
+    height:70rpx;
+    line-height:70rpx;
+}
+.address-info{
+    width: 650rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    color: #b2b2b2;
+    font-size: 30rpx;
+}
+.confirm-gray{
+    background: #b2b2b2;
+}
+.goods-no {
+    background: #fff;
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}

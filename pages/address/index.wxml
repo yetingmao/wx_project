@@ -1,0 +1,71 @@
+
+<!--pages/address/index.wxml-->
+<view class="ress">
+  <view class="ress-add bg-w ov-hid" bindtap="add">
+    <view class="add-icon fl-l">
+      <image src="../../images/add.png"></image>
+    </view>
+    <view class="add-text fl-l ft-bg">新增收货地址</view>
+  </view>
+  <template name="address1">
+    <view wx:if="{{item.beyond==0}}">
+      <view class="ress-group bg-w ov-hid">
+        <view class="group-crew fl-l" bindtap="select" data-id="{{item.index}}">
+          <view class="group-check fl-l">
+            <image class="{{item.flag?'':'dp-n'}}" src="../../images/ress-check.png"></image>
+          </view>
+          <view class="crew-top ov-hid">
+            <view class="fl-l ">{{item.name}}</view>
+            <view class="fl-l top-gender">{{item.gender==1?'男':'女'}}</view>
+            <view class="fl-l ">{{item.mobile}}</view>
+          </view>   
+          <view class="crew-bot ft-e">{{item.location_address}}{{item.address}}</view>
+        </view>
+        <view class="group-change fl-r" bindtap="change" data-id="{{item.id}}" data-location_address="{{item.location_address}}" data-location="{{item.location}}" data-address="{{item.address}}" data-mobile="{{item.mobile}}" data-gender="{{item.gender}}" data-name="{{item.name}}">
+          <image src="../../images/ress-cha.png"></image>
+        </view>
+      </view>
+    </view>
+  </template>
+  <template name="address2">
+    <view class="ress-group bg-w ov-hid">
+      <view class="group-crew fl-l">
+        <view class="crew-top ov-hid">
+          <view class="fl-l ">{{item.name}}</view>
+          <view class="fl-l top-gender">{{item.gender==1?'男':'女'}}</view>
+          <view class="fl-l ">{{item.mobile}}</view>
+        </view>
+        <view class="crew-bot ft-e">{{item.location_address}}{{item.address}}</view>
+      </view>
+      <view class="group-change fl-r" bindtap="change" data-id="{{item.id}}" data-location_address="{{item.location_address}}" data-location="{{item.location}}" data-address="{{item.address}}" data-mobile="{{item.mobile}}" data-gender="{{item.gender}}" data-name="{{item.name}}">
+        <image src="../../images/ress-cha.png"></image>
+      </view>
+    </view>  
+  </template>
+  <template name="address3">
+    <view wx:if="{{item.beyond==1}}">
+      <view class="ress-group bg-w ov-hid">
+        <view class="group-crew fl-l">
+          <view class="crew-top ov-hid">
+            <view class="fl-l ft-e">{{item.name}}</view>
+            <view class="fl-l  top-gender ft-e">{{item.gender==1?'男':'女'}}</view>
+            <view class="fl-l ft-e">{{item.mobile}}</view>
+          </view>
+          <view class="crew-bot ft-e">{{item.location_address}}{{item.address}}</view>
+        </view>
+        <view class="group-change fl-r" bindtap="change" data-id="{{item.id}}" data-location_address="{{item.location_address}}" data-location="{{item.location}}" data-address="{{item.address}}" data-mobile="{{item.mobile}}" data-gender="{{item.gender}}" data-name="{{item.name}}">
+          <image src="../../images/ress-cha.png"></image>
+        </view>
+      </view>
+    </view>
+  </template>
+  <block wx:for="{{address}}" wx:for-index="i" wx:for-item="item">
+    <template is="{{temp=='user'?'address2':'address1'}}" data="{{item}}"></template>
+  </block>
+  <view class="ress-mar {{temp=='user'?'dp-n':''}}">
+    <view class="add-pad ft-e {{address.length>0?'':'dp-n'}}">以下地址超出配送范围(不可选择)</view>
+    <block wx:for="{{address}}" wx:for-index="i" wx:for-item="item">
+      <template is="address3" data="{{item}}"></template>
+    </block>
+  </view>
+</view>

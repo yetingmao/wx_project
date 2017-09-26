@@ -1,0 +1,23 @@
+<template name="Goods">
+  <view class="lt-good fl-l {{item.state<0?'lt-gray':''}}">
+    <view class="gd-info fl-l">
+      <view class="info-text gd-title">{{item.name}}</view>
+      <view class="info-text gd-product ft-e">
+        <view class="pd-info fl-l {{item.amount <=10||item.state<0?'':'dp-n'}}">
+          <text class="">{{item.state
+            <0? '商品下架':(item.amount<=10? '仅剩'+(item.amount<=0?0:item.amount)+ '份': '')}}</text>
+        </view>
+      </view>
+      <view class="info-text gd-price">
+        <text class="pc-sales">¥{{item.money}}</text>
+        <text class="pc-orginal ft-e">{{item.ori?'¥'+item.ori:''}}</text>
+      </view>
+    </view>
+    <view class="gd-button fl-l">
+      <image class="cart-icon fl-l {{item.num<=0?'dp-n':''}}" src="../../images/reduce.png" bindtap="{{item.num>0?'bindMinus':''}}" data-id="{{item.gid}}"></image>
+      <view class="bt-num fl-l {{item.num<=0?'dp-n':''}}">{{item.num
+        <=0? '':item.num}}</view>
+          <image class="cart-icon fl-r" disabled="{{item.amount<=item.num||item.state<0?'disabled': ''}}" src="../../images/{{item.amount<=item.num||item.state<0?'add2.png': 'add.png'}}" bindtap="{{item.state&&item.state<0?'':item.amount>0?'bindPlus':''}}" data-id="{{item.gid}}"></image>
+      </view>
+    </view>
+</template>

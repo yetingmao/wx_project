@@ -1,0 +1,84 @@
+.pay {
+  font-family: "Microsoft YaHei UI";
+  height: 100%;
+}
+
+.pay-time {
+  height: 120rpx;
+  padding: 30rpx 0;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.main-info {
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.details-list {
+  padding: 20rpx 20rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.info-user {
+  width: 400rpx;
+}
+
+.info-user text {
+  margin-right: 20rpx;
+}
+
+.info-arr {
+  width: 34rpx;
+  height: 34rpx;
+  margin: 28rpx 0 0 20rpx;
+}
+
+.bottom-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.goods-list {
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.goods-name {
+  width: 70%;
+}
+
+.goods-sum {
+  width: 30%;
+}
+
+.pay-success {
+  width: 100%;
+  height: 110rpx;
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+
+.success-icon {
+  width: 78rpx;
+  height: 78rpx;
+  margin: 15rpx 0 0 15rpx;
+}
+
+.success-text {
+  padding: 15rpx 10rpx;
+}
+
+.success-text view {
+  height: 40rpx;
+  line-height: 40rpx;
+}

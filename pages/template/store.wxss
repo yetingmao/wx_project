@@ -1,0 +1,100 @@
+.list-item {
+    height: 220rpx;
+    margin-bottom: 20rpx;
+    padding: 0 20rpx;
+    display: flex;
+    flex-direction: rows;
+}
+.item-image {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 20rpx 20rpx 0 0;
+    border: 1rpx solid #f2f2f2;
+}
+.item-info {
+    width: 560rpx;
+}
+.item-top {
+    height: 160rpx;
+    border-bottom: 2rpx solid #f2f2f2;
+    padding: 20rpx 20rpx 0 0;
+    overflow: hidden;
+}
+.top-left{
+    height:140rpx;
+    width:300rpx;
+}
+.top-name {
+    font-size: 28rpx;
+    font-family: SimHei;
+    width: 280rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height:30rpx;
+    line-height:30rpx;
+}
+.top-price{
+    height:30rpx;
+    line-height:30rpx;
+}
+.price-item{
+    margin-right:18rpx;
+}
+.top-grade {
+    margin: 20rpx 0;
+    height:30rpx;
+    line-height:30rpx;
+}
+.grade-num {
+    margin-left: 10rpx;
+}
+.star-icon {
+    width: 20rpx;
+    height: 20rpx;
+    margin-right: 5rpx;
+}
+.item-bottom {
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.top-right {
+    width: 240rpx;
+}
+.tip-top {
+    margin-top: 24rpx;
+    overflow: hidden;
+}
+.right-tip {
+    padding: 5rpx 8rpx;
+    margin-right: 10rpx;
+    text-align: center;
+    line-height: 36rpx;
+    border: 1rpx solid #0096ff;
+    border-radius: 4rpx;
+}
+.right-gray{
+    border:1rpx solid #b2b2b2;
+}
+.top-kili {
+    margin-top: 30rpx;
+    height:30rpx;
+    line-height:30rpx;
+    padding-right: 10rpx;
+}
+.kili-icon {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+/*下面商品的CSS*/
+.list-goods{
+    padding: 0 20rpx;
+    margin-top: 2rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+}
+.goods-name{
+    margin-left: 140rpx;
+    width: 60%;
+}

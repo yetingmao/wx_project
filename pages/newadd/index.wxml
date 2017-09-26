@@ -1,0 +1,33 @@
+<view class="newaddress">
+  <view class="new-name ov-hid bg-w bo-bo">
+    <view class="name-text fl-l ft-bg phone-title">联系人：</view>
+    <input class="fl-l" placeholder="你的姓名" bindblur="addName" value="{{name}}" />
+  </view>
+  <view class="new-gender ov-hid bg-w bo-bo">
+    <view class="gender-boy fl-l" bindtap="checkMan">
+      <image src="../../images/{{man?'ress-check':'ress-ncheck'}}.png"></image>
+      <text class="ta-c">先生</text>
+    </view>
+    <view class="gender-girl fl-l" bindtap="checkWoman">
+      <image src="../../images/{{man?'ress-ncheck':'ress-check'}}.png"></image>
+      <text class="ta-c">女士</text>
+    </view>
+  </view>
+  <view class="new-phone ov-hid bg-w bo-bo">
+    <view class="fl-l ft-bg phone-title">联系电话：</view>
+    <input class="fl-l" placeholder="请输入手机号" maxlength="11" bindblur="addMobile" value="{{mobile}}"/>
+  </view>
+  <view class="new-phone new-ress ov-hid bg-w" >
+    <view class="fl-l ft-bg phone-title">收货地址：</view>
+    <view class="address-value" bindtap="selectAddress">
+      <input class="fl-l input-long" disabled="true" value="{{location_address}}" placeholder="小区/街道/大厦/街道" />
+      <view class="fl-r">
+        <image src="../../images/user-right.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="new-detail bg-w ov-hid">
+    <input class="fl-r" placeholder="楼号/门牌号等详细地址" bindblur="addDetail" value="{{detail}}"/>
+  </view>
+  <button class="new-ensure bg-r ta-c ft-bg" bindtap="addInfo" disabled="{{dis}}">确定</button>
+</view>

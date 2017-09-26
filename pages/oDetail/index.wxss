@@ -1,0 +1,266 @@
+view {
+  box-sizing: content-box;
+}
+
+.details {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.details-status {
+  height: 200rpx;
+  padding: 40rpx 30rpx 30rpx;
+}
+
+.status-head {
+  overflow: hidden;
+}
+
+.head-logo {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.head-logo image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.head-info {
+  margin: 10rpx 0 0 15rpx;
+  line-height: 35rpx;
+}
+
+.status-middle {
+  margin-top: 40rpx;
+  width: 100%;
+  height: 1rpx;
+}
+
+.status-bottom {
+  margin-top: 30rpx;
+}
+
+.bottom-sign {
+  overflow: hidden;
+  width: 590rpx;
+  margin: 0 auto;
+}
+
+.sign-clc {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: #e6e6e6;
+}
+
+
+.sign-line {
+  margin: 9rpx 2rpx;
+  width: 260rpx;
+  height: 2rpx;
+  background: #e6e6e6;
+}
+
+.sign-active{
+  background:#ffa600;
+}
+
+.bottom-text {
+  margin-top: 10rpx;
+  position: relative;
+}
+
+.bottom-text .text-mid {
+  position: absolute;
+  left: 41%;
+}
+
+.bottom-text .text-right {
+  position: absolute;
+  right: 0;
+}
+
+.details-user {
+  margin: 20rpx 0;
+  height: 70rpx;
+  padding: 25rpx 30rpx;
+  overflow: hidden;
+}
+
+.user-logo {
+  width: 54rpx;
+  height: 54rpx;
+  margin-top: 5rpx;
+}
+
+.user-logo image {
+  width: 54rpx;
+  height: 54rpx;
+  display: block;
+}
+
+.user-info {
+  margin-left: 10rpx;
+  width: 625rpx;
+}
+
+.user-info .info-head {
+  overflow: hidden;
+}
+
+.user-info .info-head .head-name {
+  margin-left: 15rpx;
+}
+
+.user-address {
+  width: 625rpx;
+  height: 30rpx;
+  margin-top: 3rpx;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.details-goods {
+  margin-bottom: 20rpx;
+}
+
+.goods-title {
+  height: 90rpx;
+  padding: 0 30rpx;
+  overflow: hidden;
+  line-height: 90rpx;
+  margin-bottom: 2rpx;
+}
+
+.goods-title .title-logo {
+  margin-top: 17rpx;
+  width: 40rpx;
+  height: 56rpx;
+}
+
+.goods-title .title-logo image {
+  width: 40rpx;
+  height: 46rpx;
+}
+
+.goods-info {
+  height: 90rpx;
+  padding: 0 30rpx;
+  line-height: 90rpx;
+  overflow: hidden;
+  margin: 2rpx 0;
+}
+
+.goods-info .info-name {
+  width: 60%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.goods-info .info-num {
+  width: 20%;
+}
+
+.goods-info .info-num .num-x {
+  margin-right: 10rpx;
+}
+
+.goods-info .info-prace {
+  width: 20%;
+}
+
+.goods-add {
+  padding: 10rpx 30rpx;
+  margin-bottom: 2rpx;
+}
+
+.add-one {
+  overflow: hidden;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.goods-value {
+  padding: 0 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.details-order {
+  margin-bottom: 200rpx;
+}
+
+.order-title {
+  padding: 0 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-bottom: 1rpx;
+}
+
+.order-num {
+  padding: 0 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 2rpx 0;
+}
+
+.order-num text {
+  margin-left: 20rpx;
+}
+
+.details-btn {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+  padding: 20rpx 0;
+  z-index: 100;
+}
+
+.details-btn .btn-submit {
+  margin-right: 30rpx;
+  border: 1rpx solid #f00;
+  padding: 15rpx 30rpx;
+  border-radius: 15rpx;
+}
+
+.details-btn .btn-cancel {
+  margin-right: 50rpx;
+  border: 1rpx solid #000;
+  padding: 15rpx 30rpx;
+  border-radius: 15rpx;
+}
+
+.info-group {
+  height: 35rpx;
+  line-height: 35rpx;
+}
+/*底部弹出框*/
+.fixed-body {
+  bottom: 0;
+  position: absolute;
+  width: 94%;
+  margin: 0 0 10rpx 3%;
+}
+
+.fixed-top {
+  height: 180rpx;
+  line-height: 90rpx;
+  border-radius: 40rpx;
+}
+
+.fixed-top .top-bod {
+  border-bottom: 1px solid #ccc;
+}
+
+.fixed-bottom {
+  border-radius: 40rpx;
+  margin-top: 10rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+
+

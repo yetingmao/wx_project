@@ -1,0 +1,61 @@
+<view class="location">
+  <view class="location-head bg-r">
+    <input focus="{{state==1? false:true}}" value="{{words}}" bindfocus="onFocus" bindinput="searchAddress" class="head-info bg-w" placeholder="请输入地址" />
+    <image src="../../images/search.png"></image>
+    <text bindtap="delSearch" class="head-del ft-b {{state >= 3?' ':'dp-n'}}">取消</text>
+  </view>
+  <view class="{{state == 1?' ':'dp-n'}}">
+    <view class="lication-cur">
+      <view class="cur-text ft-e">当前地址</view>
+      <view class="cur-address bg-w">
+        <view class="address-name fl-l"> {{currentAddress}}</view>
+        <view class="adddress-redect fl-r ft-b" bindtap="getlocation">
+          <image src="../../images/aim.png"></image>
+          <text>重新定位</text>
+        </view>
+      </view>
+    </view>
+    <view class=" {{temp==true? '':'dp-n'}}">
+      <view class="cur-text ft-e">收货地址</view>
+      <import src="../template/address.wxml" />
+      <block wx:for="{{info}}" wx:for-index="i" wx:for-item="item">
+        <view wx:if="{{i <= 4}}">
+          <template is="address" data="{{item}}"></template>
+        </view>
+      </block>
+    </view>
+    <view class="cur-text ft-e">附近地址</view>
+    <import src="../template/location.wxml" />
+    <block wx:for="{{pois}}" wx:for-index="i" wx:for-item="item">
+      <view wx:if="{{i <= 9}}">
+        <template is="location" data="{{item}}"></template>
+      </view>
+    </block>
+  </view>
+  <view class="{{state==2? '':'dp-n'}}">
+    <view class="cur-text ft-e">搜索历史</view>
+    <import src="../template/location.wxml" />
+    <block wx:for="{{his}}" wx:for-index="i" wx:for-item="item">
+      <view wx:if="{{i <= 9}}">
+        <template is="location" data="{{item}}"></template>
+      </view>
+    </block>
+    <view class='ta-c'>{{his.length==0?'暂无历史记录':''}}</view>
+  </view>
+  <view class="{{state==3? '':'dp-n'}}">
+    <import src="../template/location.wxml" />
+    <block wx:for="{{pois}}" wx:for-index="i" wx:for-item="item">
+      <view wx:if="{{i <= 9}}">
+        <template is="location" data="{{item}}"></template>
+      </view>
+    </block>
+  </view>
+  <view class="{{state==4? '':'dp-n'}}">
+    <view class="location-not ta-c">
+      <view class="not-logo">
+        <image src="../../images/location.png"></image>
+      </view>
+      <view class="not-text ft-e">未搜到该地址!</view>
+    </view>
+  </view>
+</view>

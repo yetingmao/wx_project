@@ -1,0 +1,24 @@
+
+<!--pages/bind/index.wxml-->
+<view class="bind">
+  <view class="bind-info ft-bg">你还没有登录过，绑定手机号即可使用!</view>
+  <view class="bind-phone ov-hid">
+    <view class="phone-text fl-l">手机号码：</view>
+    <input class="phone-int fl-l" placeholder="请输入手机号" maxlength="11" bindinput="phone" value="{{bind.phone}}" />
+    <image class="error-icon delete-icon fl-l {{tag.phone.length>0?'':'dp-n'}}" bindtap="deleteP" src="../../images/close.png"></image>
+  </view>
+  <view class="bind-code ov-hid">
+    <view class="code-text fl-l">验证码：</view>
+    <input class="code-int fl-l" placeholder="验证码" maxlength="4" bindinput="code" value="{{bind.code}}" />
+    <view class="code-click fl-r ft-a ta-c" bindtap="getCode">{{code.text}}</view>
+  </view>
+  <view class="bind-error ov-hid">
+    <view class="{{prompt?'':'dp-n'}}">
+      <image class="error-icon fl-l" src="../../images/bind-error.png"></image>
+      <view class="error-text fl-l ft-a">{{prompt}}</view>
+    </view>
+  </view>
+  <view class="bind-button bg-r ft-bg ta-c {{bind.code&&bind.phone&&bind.code.length==4&&bind.phone.length==11?'':'bind-gray'}}" bindtap="toBind">
+    绑定手机号
+  </view>
+</view>

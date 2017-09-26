@@ -1,0 +1,31 @@
+
+<!--pages/user/index.wxml-->
+
+<!--<text>pages/user/index.wxml</text>-->
+<view class="user-body">
+  <view class="user-head">
+    <image class="head-bg" src="../../images/user-bg.png"></image>
+    <view class="head-info" bindtap="{{ state==0?'toBind':''}}">  
+      <view class="head-photo">
+        <image src="{{src}}"></image>
+      </view>
+      <view class="head-tele ft-bg ft-w ta-c {{ state==1?'':'dp-n'}} ">{{user}}</view>
+      <view class="head-tele ft-bg ft-w ta-c {{ state==0?'':'dp-n'}}">请绑定用户</view>
+    </view>
+  </view>
+  <view class="user-address user-line ov-hid {{ state==1?'':'dp-n'}}" bindtap="toAddress">
+    <view class="ress-icon fl-l">
+      <image src="../../images/user-ress.png"></image>
+    </view>
+    <view class="ress-text fl-l ft-bg">收货地址</view>
+    <view class="ress-go fl-r">
+      <image class="go-ress" src="../../images/user-right.png"></image>
+    </view>
+  </view>
+  <view class="user-line ov-hid" bindtap="call">
+    <view class="phone-icon fl-l">
+      <image src="../../images/user-phone.png"></image>
+    </view>
+    <view class="phone-text fl-l ft-bg">客服电话：400-696-5805</view>
+  </view>
+</view>

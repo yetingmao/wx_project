@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<scroll-view class="home bg" scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" upper-threshold="0"  lower-threshold="0">
+    <view class="head">
+        <view bindtap="toLocation" class="fl-l">
+            <image src="../../images/local.png" class="h-local fl-l"></image>
+            <view class="h-name ft-bg fl-l">{{address}}</view>
+        </view>
+        <view bindtap="toSearch" class="h-search fl-l">
+            <image src="../../images/search.png" class="s-icon fl-l"></image>
+            <view class="s-content fl-l">输入商品名称</view>
+        </view>
+    </view>
+    <view class="main">
+        <view class="m-title ft-weight">附近商家</view>
+        <view class="bg">
+            <import src="../template/store.wxml"/>
+            <view wx:if="{{listData && listData.length > 0}}">
+                <block wx:for="{{listData}}" wx:key="listData">
+                    <template is="store" data="{{item}}"></template>
+                </block>
+                <view class="store-loading">{{bottom}}</view>
+            </view>
+            <view class="none-store" wx:else>
+                <image src="../../images/store-gray.png"></image>
+                <view class="ft-e">附近没有更多商家!</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

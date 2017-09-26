@@ -1,0 +1,61 @@
+.user-body {
+  /*background-color: #ddd;*/
+}
+
+.user-head {
+  position: relative;
+  margin-bottom: 10rpx;
+  height: 400rpx;
+  overflow: hidden;
+}
+
+.head-bg {
+  width: 750rpx;
+}
+
+.head-info {
+  position: absolute;
+  top: 100rpx;
+  left: 0rpx;
+  right: 0rpx;
+  margin: auto;
+  width: 250rpx;
+}
+
+.head-photo {
+  margin: auto;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100%;
+}
+
+.head-photo image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.head-tele {
+  line-height: 60rpx;
+}
+
+.user-line {
+  line-height: 100rpx;
+  background-color: #fff;
+  overflow: hidden;
+  height: 100rpx;
+}
+
+.user-line image {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 20rpx 20rpx 0;
+}
+
+.user-line .go-ress {
+  width: 30rpx;
+  height: 50rpx;
+}
+
+.user-address {
+  border-bottom: 1px solid #f2f2f2;
+}

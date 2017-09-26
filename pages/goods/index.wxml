@@ -1,0 +1,25 @@
+
+<!--店铺搜索商品-->
+<scroll-view class="search-body" bindscrolltolower="lower" scroll-y="true">
+  <view class="gd-search">
+    <view class="search-info">
+      <image class="sc-icon" src="../../images/search.png"></image>
+      <input class=" sc-text" placeholder="输入商品名称" value="{{keyword}}" bindblur="keyword" bindinput='list' />
+    </view>
+  </view>
+  <view class="goods-info">
+    <view class="{{keyTag?'dp-n':''}}">
+      <view class="search-log {{searchList.length>0?'':'dp-n'}}" wx:for="{{searchList}}">
+        <view class="search-item" data-value="{{item}}" bindtap="keyword">{{item}}</view>
+      </view>
+      <view class="cart-no {{searchList.length==0?'':'dp-n'}}">暂无搜索记录</view>
+    </view>
+    <scroll-view class="gd-lists {{goodsList.length>0&&keyTag?'':'dp-n'}}">
+      <import src="../template/good.wxml" />
+      <block wx:for-items="{{goodsList}}">
+        <template is="Goods" data="{{item}}"></template>
+      </block>
+    </scroll-view>
+    <view class="cart-no {{goodsList.length==0&&keyTag?'':'dp-n'}}">{{keyResult}}</view>
+  </view>
+</scroll-view>

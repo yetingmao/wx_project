@@ -1,0 +1,52 @@
+<view class="pay bg">
+  <view class="pay-time bg-w {{payTag?'dp-n':''}}">
+    <view class="time-title ft-e">{{prompt?'支付剩余时间':Detail.stateInfo}}</view>
+    <view class="time-detail ft-b">{{prompt?prompt:''}}</view>
+  </view>
+  <view class="pay-success {{payTag?'':'dp-n'}}">
+    <image src="../../images/status.png" class="fl-l success-icon"></image>
+    <view class="success-text">
+      <view class="ft-c ft-bg ">支付成功！</view>
+      <view class="ft-e">商家会尽快为您发货，请耐心等待~</view>
+    </view>
+  </view>
+  <view class="pay-main bg-w">
+    <view class="main-info">
+      <view class="info-title ft-bg fl-l">订单编号</view>
+      <view class="fl-r ft-e">{{Detail.orderId}}</view>
+    </view>
+    <view class="main-info" bindtap="detailsShow" data-tag="{{detail ? 0 : 1}}">
+      <view class="info-title ft-bg fl-l">订单详情</view>
+      <image src="{{src}}" class="info-arr fl-r ft-e"></image>
+      <view class="info-user {{detail ? 'dp-n' : ''}} fl-r">
+        <text>{{Detail.customerName||'--'}}</text>
+        <text>{{Detail.customerPhone}}</text>
+        <text>{{Detail.arrivedAddress}}</text>
+      </view>
+    </view>
+    <view class="details-list {{detail ? '' : 'dp-n'}}">
+      <view class="list-item">
+        <view class="ft-e">
+          <text>{{Detail.customerName||'--'}} </text>
+          <text> {{Detail.customerPhone}}</text>
+        </view>
+        <view class="ft-e">{{Detail.arrivedAddress}}</view>
+      </view>
+      <view wx:for="{{goods}}">
+        <view class="goods-list">
+          <view class="goods-name fl-l ft-e">{{item.name}}</view>
+          <view class="goods-sum fl-l ft-e">X{{item.amount}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="main-info">
+      <view class="info-title ft-bg fl-l">支付金额</view>
+      <view class="fl-r ft-b">￥{{Detail.sum||0}}</view>
+    </view>
+    <view class="main-info {{timeTag?'dp-n':''}}">
+      <view class="info-title ft-bg fl-l ">支付方式</view>
+      <view class="fl-r ft-e ">微信支付</view>
+    </view>
+  </view>
+  <view class="bottom-btn {{payTag?'dp-n':''}} bg-r ft-w {{Detail.state==5&&Detail.ttl>0?'':'dp-n'}}" bindtap="pay">确认支付</view>
+</view>

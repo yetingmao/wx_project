@@ -1,0 +1,54 @@
+/* pages/address/index.wxss */
+@import "../../app.wxss";
+.ress{
+
+}
+.ress-add{
+    width: 750rpx;
+    margin-bottom: 20rpx;
+}
+.ress-mar{
+    margin-top: 20rpx;
+}
+.add-icon image{
+    width: 50rpx;
+    height: 50rpx;
+    margin: 25rpx 10rpx 0 20rpx;
+}
+.add-text{
+    line-height: 100rpx;
+}
+.add-pad{
+    margin: 0 0 10rpx 20rpx;
+}
+.ress-group{
+    border-bottom:1px solid #f2f2f2;
+    padding: 20rpx;
+}
+.group-crew{
+    width: 80%;
+}
+.crew-top{
+    margin-bottom: 20rpx;
+}
+.crew-top .top-gender{
+    margin: 0 10rpx;
+}
+.crew-bot{
+    width: 80%;
+}
+.group-check{
+    width: 50rpx;
+    height: 50rpx;
+    margin: 10rpx 10rpx 0 0;
+}
+.group-check image{
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.group-change image{
+    width: 60rpx;
+    height: 60rpx;
+    margin: 10rpx 50rpx 0 0;
+}

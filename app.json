@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/newadd/index",
+    "pages/bind/index",
+    "pages/confirm/index",
+    "pages/order/index",
+    "pages/pay/index",
+    "pages/location/index",
+    "pages/oDetail/index",
+    "pages/store/index",
+    "pages/search/index",
+    "pages/goods/index",
+    "pages/address/index",
+    "pages/user/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d5051d",
+    "navigationBarTextStyle": "white"
+
+  },
+  "tabBar": {
+    "selectedColor": "#d4041e",
+    "color": "#a5a5a5",
+    "list": [
+      {
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home1.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/ord.png",
+        "selectedIconPath": "images/ord1.png",
+        "pagePath": "pages/order/index",
+        "text": "订单"
+      },
+      {
+        "iconPath": "images/use.png",
+        "selectedIconPath": "images/use1.png",
+        "pagePath": "pages/user/index",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+
+<!--pages/order/index.wxml-->
+<template name="list">
+  <view class="list" data-id="{{item.id}}">
+    <navigator url="../oDetail/index?id={{item.id}}">
+      <view class="list-head list-height bg-w">
+        <view class="head-left fl-l">
+          <view class="ft-bg left-store">{{item.storeName}}</view>
+          <view class="ft-e left-date">{{item.createdAt}}</view>
+        </view>
+        <view class="fl-r ft-bg ft-c">
+
+          <!--<view class="fl-r ft-bg ft-c">
+                        {{item.state == 5 ? '待支付' :  
+                        (item.state == 10 ? '待确认' :   已支付等待店家确认
+                        (item.state == 20 ? '等待收货' :    商家已确认
+                        (item.state == 99 ? '已完成' :   
+                        (item.state == 30 ? '申请取消，等待确认' :
+                        (item.state == -100 ? '已取消，退款中' :
+                        (item.state == -101 ? '订单已拒收，退款中':
+                        (item.state == -98 ? '未支付，订单已取消':
+                        (item.state == -99 ? '商家拒单，退款中' :'10 退款完成')))))))}}
+                    </view>-->
+          <view class="fl-r ft-bg ft-c">{{item.stateInfo}}</view>
+          <view class="right-return fl-c fl-r ft-a" wx:if="{{item.state == 7 || item.state == 8 || item.state == 9 }}">{{'退款中'}}</view>
+        </view>
+      </view>
+      <view class="list-middle bg-w">
+        <view class="fl-l ft-e middle-length">{{item.goodName}}</view>
+        <view class="fl-r ft-e">￥{{item.sum}}</view>
+      </view>
+    </navigator>
+
+    <!--待支付-->
+    <view wx:if="{{item.state == 5}}" class="list-bottom list-height bg-w  ta-c">
+      <view class="bottom-btn fl-r ft-b ft-bg bottom-red" data-id="{{item.id}}" bindtap="payoff">{{item.prompt}}</view>
+      <view class="bottom-btn fl-r ft-bg" data-phone="{{item.storePhone}}" bindtap="cancel" data-state="{{item.state}}" data-id="{{item.id}}">取消订单</view>
+    </view>
+
+    <!--待确认-->
+    <view wx:elif="{{item.state == 10}}" class="list-bottom list-height bg-w  ta-c">
+      <view class="bottom-btn fl-r ft-bg" bindtap="cancel" data-state="{{item.state}}" data-id="{{item.id}}">取消订单</view>
+    </view>
+
+    <!--等待收货-->
+    <view wx:elif="{{item.state == 20}}" class="list-bottom list-height bg-w  ta-c">
+      <view class="bottom-btn fl-r ft-b ft-bg bottom-red" data-id="{{item.id}}" bindtap="arriver">确认送达</view>
+      <view class="bottom-btn fl-r bottom-two ft-bg" bindtap="cancel" data-phone="{{item.storePhone}}" data-state="{{item.state}}" data-id="{{item.id}}">取消订单</view>
+    </view>
+    <view wx:else class="list-bottom-none"></view>
+  </view>
+</template>
+<view class="order bg" style="display:{{state==2?'block':''}}">
+  <view class="ta-c order-empty">
+    <view class="empty-img">
+      <image src="../../images/order.png"></image>
+    </view>
+    <view class="empty-top ft-e">登陆后查看订单</view>
+    <view class="empty-bottom ft-bg " bindtap="bind">登录</view>
+  </view>
+</view>
+<view class="order bg" style="display:{{state==1&&aList.length==0?'block':''}}">
+  <view class="ta-c order-empty">
+    <view class="empty-img">
+      <image src="../../images/order.png"></image>
+    </view>
+    <view class="empty-top ft-e">还没下过单哦~</view>
+    <view class="ft-b ft-bg" bindtap="look">去逛逛></view>
+  </view>
+</view>
+<view>
+  <scroll-view class="order bg" scroll-top="{{scrollTop}}" style="display:{{state==1&&aList.length>0?'block':''}}; height:{{scrollHeight}}" scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" upper-threshold="0" lower-threshold="0">
+    <view class="order-lists">
+      <view wx:if="{{aList && aList.length > 0}}">
+        <block wx:for="{{aList}}">
+          <template is="list" data="{{item}}"></template>
+        </block>
+        <view class="order-bottom ta-c">{{bottom}}</view>
+      </view>
+    </view>
+
+    <!--<view class="order-ago ta-c bg-w ft-e">查看三个月前的订单</view>-->
+  </scroll-view>
+</view>
+<view class="order-fixed {{show ? '' : 'dp-n'}}">
+  <view class="fixed-body ta-c">
+    <view class="fixed-top bg-w">
+      <view class="ft-b top-bod ft-bg">联系商家，快速取消订单</view>
+      <view class="ft-b ft-bg phone-number" bindtap="callBusiness">联系电话：{{phone}}</view>
+    </view>
+    <view class="fixed-bottom bg-w ft-e ft-bg" bindtap="cancelCall">取消</view>
+  </view>
+</view>

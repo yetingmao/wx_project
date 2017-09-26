@@ -1,0 +1,64 @@
+<view class="confirm bg">
+
+  <!--todo 改为引用模板-->
+  <view class="details-user bg-w" bindtap="toAddress">
+    <view class="address-info fl-l {{address?'':'dp-n'}}">
+      <view class="user-logo fl-l">
+        <image src="../../images/address.png"></image>
+      </view>
+      <view class="user-info fl-l  ">
+        <view class="info-head info-group">
+          <view class="fl-l ft-d">{{address.name}}
+            <text class="head-name">{{address.gender==1?'先生':'女士'}}</text>
+          </view>
+          <view class="head-tel fl-l ft-e">{{address.mobile}}</view>
+        </view>
+        <view class="user-address ft-e info-group">{{address.location_address}}{{address.address}}</view>
+      </view>
+    </view>
+    <view class="fl-l address-info {{address?'dp-n':''}}">请填写收货地址，手机号码</view>
+    <image src="../../images/user-right.png" class="fl-r user-arr"></image>
+  </view>
+  <view class="confirm-center bg-w">
+    <view class="center-pay">
+      <view class="pay-title fl-l">支付方式</view>
+      <view class="pay-style fl-r">在线支付</view>
+    </view>
+    <input class="center-remark" placeholder="备注：口味、餐具等" bindblur="remark" value="{{remark}}" />
+  </view>
+  <view class="details-goods">
+    <view class="goods-title bg-w ">
+      <view class="ft-bg fl-l ">{{store.name}}</view>
+      <view class="title-logo fl-r ">
+        <image src="../../images/tel.png "></image>
+      </view>
+    </view>
+    <view wx:for="{{carts}}">
+      <view class="goods-info bg-w">
+        <view class="info-name fl-l ft-e ">{{item.name}}</view>
+        <view class="info-num fl-l ft-e ">
+          <text class="num-x ">X</text>{{item.num}}</view>
+        <view class="info-prace fl-r ta-r ft-e ">¥{{item.money}}</view>
+      </view>
+    </view>
+    <view class="goods-no {{carts&&carts.length>0?'dp-n':''}}">暂无数据</view>
+    <view class="goods-add bg-w {{store.fre>0&&store.fre>0?'':'dp-n'}}">
+      <view class="add-one">
+        <view class="fl-l ">{{cost>0?'打包费':''}}</view>
+        <view class="fl-r ft-e ">{{cost>0?'¥'+cost:''}}</view>
+      </view>
+      <view class="add-one">
+        <view class="fl-l ">{{store.fre>0?'配送费':''}}</view>
+        <view class="fl-r ft-e ">{{store.fre>0?'¥'+store.fre:''}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="confirm-bottom bg-w ">
+    <view class="fl-l ">
+      <view class="bottom-text ">应付:
+        <text class="ft-b ">¥{{total}}</text>
+      </view>
+    </view>
+    <button class="confirm-btn fl-r {{address&&carts.length>0?'':'confirm-gray'}}" bindtap="toPay">下单</button>
+  </view>
+</view>

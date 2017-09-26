@@ -1,0 +1,77 @@
+/**index.wxss**/
+@import '../template/store.wxss';
+view {
+  box-sizing: border-box;
+  font-size: 24rpx;
+}
+.home {
+  height: 100%;
+  overflow:auto;
+}
+/*head*/
+.head {
+  height: 90rpx;
+  background-color: #d5051d;
+  box-sizing: border-box;
+  padding: 10rpx 30rpx 20rpx 30rpx;
+}
+.h-local {
+  width: 28rpx;
+  height: 36rpx;
+  margin: 12rpx 10rpx 0 0;
+}
+.h-name {
+  width: 190rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #fff;
+  line-height: 60rpx;
+}
+.h-search {
+  width: 450rpx;
+  height: 60rpx;
+  padding: 0rpx 40rpx;
+  border-radius: 60rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+.s-icon {
+  width: 34rpx;
+  height: 34rpx;
+  margin-top: 13rpx;
+}
+.s-content {
+  width: 320rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+/*main*/
+.main {
+  margin-top: 20rpx;
+  background: #fff;
+}
+.m-title {
+  padding-left: 20rpx;
+  font-size: 24rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+.store-loading{
+  height:60rpx;
+  line-height:60rpx;
+  background:#f2f2f2;
+  text-align:center;
+}
+.none-store{
+  text-align:center;
+}
+.none-store image{
+  width:230rpx;
+  height:180rpx;
+  margin:130rpx 0 40rpx 0;
+}

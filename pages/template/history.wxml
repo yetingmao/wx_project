@@ -1,0 +1,5 @@
+<template name="history">
+  <view class="cur-address bg-w" bindtap="hisSearch" data-lat="{{item.lat}}"data-lon="{{item.lon}}" data-keyword="{{item.name}}">
+    <view class="address-name">{{item.name}}</view>
+  </view>
+</template>
